@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 100% 35%;
+    --foreground: 0 0% 0%;
+    
+    --card: 0 0% 75%;
+    --card-foreground: 0 0% 0%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    --primary: 300 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 87%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 120 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 50%;
+    --input: 0 0% 100%;
+    --ring: 300 100% 50%;
+    
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply text-foreground font-system;
+    background: linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #00ff00 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .win98-window {
+    @apply bg-[#c0c0c0] shadow-win98-outset;
+  }
+  
+  .win98-titlebar {
+    @apply bg-gradient-to-r from-[#000080] to-[#1084d0] text-white font-bold px-1 py-0.5 flex items-center justify-between;
+  }
+  
+  .win98-button {
+    @apply bg-[#c0c0c0] shadow-win98-button px-4 py-1.5 font-system text-sm 
+           active:shadow-win98-pressed active:translate-x-[1px] active:translate-y-[1px]
+           border-0;
+  }
+  
+  .win98-input {
+    @apply bg-white shadow-win98-inset px-2 py-1 border-0 font-system text-sm;
+  }
+  
+  .win98-panel {
+    @apply bg-[#c0c0c0] shadow-win98-inset p-2;
+  }
+}
+
+/* Scrollbar styling - Windows 98 style */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 1px outset #dfdfdf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dfdfdf;
+}
+
+::-webkit-scrollbar-corner {
+  background: #c0c0c0;
+}
